@@ -1,0 +1,15 @@
+.spec-val{
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    padding: 0.3rem 0;
+
+    .spec{
+         color: var(--grey);
+        min-width: 150px;
+    }
+
+    .val{
+        color: var(--grey-black);
+    }
+}

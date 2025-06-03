@@ -1,0 +1,80 @@
+<div class="product-item">
+
+    <!-- Product Image Content Section -->
+    <section class="product-image-content">
+        
+        <div class="img-control-btns">
+            <i class="fa-solid fa-arrow-left"></i>
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        </div>
+
+        <img [src]="selectedImg" alt="product-main-img" class="product-main-img">
+
+        <div class="product-side-images">
+            @for (imgSrc of images; track $index) {
+                <img [src]="imgSrc" alt=""
+                (click)="onSelectImg(imgSrc)">
+            }
+
+        </div>
+
+    </section>
+    <!-- Product Details Content Section -->
+    <section class="product-details-content">
+        <div class="title-rate">
+            <span>Stripped Zip Through Jumpsuit with Pocket and Belt</span>
+            <span class="product-rate"> <i class="fa-solid fa-star"></i> 4.8</span>
+        </div>
+
+        <p class="price-review"> <span class="price">{{ ' 320 ' | currency}}</span> <span>(24 Reviews)</span></p>
+
+        <div class="sizes">
+
+            <p class="property-title">Size</p>
+            <div class="sizes-types">
+                @for (size of sizes; track $index; ) {
+                        <span (click)="onSelectSize(size)"
+                        [class.selected]="selectedSize === size"
+                        >{{size}}</span>
+                }
+
+            </div>
+
+        </div>
+
+        <div class="details">
+            <p class="property-title">Product Details</p>
+            <span>Manfinity Homme Men Summer Solid Button Up Shirt & Shorts Set,
+                 Men's 'Elegant Striped Men's T-Shirt Short Sleeve Crew Neck Top Casual Fashion,
+                Plus Size Men's Short Sleeve Polo Shirt, Casual Solid Color With Turndown Collar, Golf Apparel.</span>
+        </div>
+
+        <div class="material">
+            <p class="property-title">Material</p>
+            <app-spec-val spec="Material Composition" val="40% Viscose, 30% Cotton, 30% Polyster"></app-spec-val>
+        </div>
+
+        <div class="warranty">
+            <p class="property-title">Warranty & Care</p>
+            <app-spec-val spec="Care Instructions" val="Machine Wash"></app-spec-val>
+        </div>
+
+       <div class="specs">
+            <p class="property-title">General Specifications</p>
+            <app-spec-val spec="Nature's Comfort" val="Better Cotton - Responsibly Sourced Cotton"></app-spec-val>
+            <app-spec-val spec="Sleeve Length" val="Short Sleeves"></app-spec-val>
+            <app-spec-val spec="Neckline" val="Collared"></app-spec-val>
+            <app-spec-val spec="Length" val="Maxi"></app-spec-val>
+            <app-spec-val spec="Design" val="Stripes"></app-spec-val>
+            <app-spec-val spec="Occasion" val="Casual"></app-spec-val>
+            <app-spec-val spec="Style" val="Jumpsuit | Belted"></app-spec-val>
+            <app-spec-val spec="Fabric Feature" val="Bci Cotton - Responsibly Sourced Cotton."></app-spec-val>
+        </div>
+
+    </section>
+
+    <section class="favourites-cart">
+        <i class="fa-regular fa-heart"></i>
+        <input type="button" value="Add to Cart" class="add-to-cart-btn">
+    </section>
+</div>
